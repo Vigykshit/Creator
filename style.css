@@ -1,0 +1,89 @@
+/* ----- GLOBAL & LAYOUT ----- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f8f8ff;
+    color: #444;
+}
+
+.app-container { display: flex; height: 100vh; }
+
+/* ----- SIDEBAR STYLES ----- */
+.sidebar {
+    width: 240px;
+    background-color: #5F4B8B;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0;
+    transition: width 0.3s ease;
+}
+.sidebar-header { text-align: center; margin-bottom: 40px; }
+.logo-initials { font-size: 28px; font-weight: bold; display: inline-block; padding: 10px 20px; border: 2px solid rgba(255,255,255,0.8); border-radius: 8px;}
+.sidebar-nav { flex-grow: 1; }
+.sidebar-nav ul { list-style: none; }
+.sidebar-nav li a { display: flex; align-items: center; padding: 15px 30px; color: #e0d9f5; text-decoration: none; cursor: pointer; transition: all 0.2s ease-in-out; border-left: 4px solid transparent; white-space: nowrap; }
+.sidebar-nav li a:hover { background-color: #7864AF; color: #fff; }
+.sidebar-nav li.active a { background-color: #7864AF; color: #fff; border-left: 4px solid #ffffff; }
+.sidebar-nav li a i { width: 20px; margin-right: 20px; text-align: center; }
+.sidebar-footer { position: relative; }
+.footer-graphic { position: absolute; bottom: 50px; width: 100%; opacity: 0.6; }
+.logout-link { display: flex; align-items: center; padding: 15px 30px; cursor: pointer; color: #e0d9f5; text-decoration: none; }
+
+/* ----- MAIN CONTENT & SHARED STYLES ----- */
+.main-content { flex-grow: 1; padding: 30px; overflow-y: auto; }
+.panel { background-color: #fff; border-radius: 10px; padding: 25px; box-shadow: 0 4px 15px rgba(0,0,0,0.07); }
+.panel-header { margin-bottom: 25px; }
+.panel-header h2 { font-size: 24px; color: #333; font-weight: 600; }
+.btn { background-color: #5F4B8B; color: #fff; border: none; padding: 12px 25px; border-radius: 6px; font-size: 15px; cursor: pointer; font-weight: 500; transition: background-color 0.2s; }
+.btn:hover { background-color: #4c3b70; }
+
+/* ----- DASHBOARD STYLES ----- */
+.kpi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.kpi-card { padding: 20px; text-align: center; }
+.kpi-card h3 { color: #5F4B8B; font-size: 16px; font-weight: 500; margin-bottom: 10px; text-transform: uppercase; }
+.kpi-card p { font-size: 36px; font-weight: 300; }
+.kpi-card .btn { margin-top: 15px; }
+.kpi-card.gold h3, .kpi-card.gold .btn { background-color: #E8B63B; }
+.kpi-card.gold:hover .btn { background-color: #c99d2b; }
+.kpi-card.green h3, .kpi-card.green .btn { background-color: #4CAF50; }
+.kpi-card.green:hover .btn { background-color: #3e8e41; }
+
+/* ----- FORM & PROFILE STYLES ----- */
+.form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.form-group { display: flex; flex-direction: column; }
+.form-group label { margin-bottom: 8px; font-weight: 500; font-size: 14px; }
+.form-group input, .form-group select { padding: 12px; border: 1px solid #ddd; border-radius: 6px; font-size: 15px; }
+.form-actions { margin-top: 30px; }
+
+/* ----- DATA TABLE STYLES ----- */
+.data-table { width: 100%; border-collapse: collapse; }
+.data-table th, .data-table td { padding: 15px; text-align: left; border-bottom: 1px solid #eee; }
+.data-table th { font-weight: 600; font-size: 14px; text-transform: uppercase; color: #888; }
+.data-table td .status { padding: 5px 10px; border-radius: 20px; font-size: 12px; font-weight: 600; }
+.status.approved { background-color: #e8f5e9; color: #4caf50; }
+.status.pending { background-color: #fff3e0; color: #ffa726; }
+.status.rejected { background-color: #ffebee; color: #f44336; }
+
+/* ----- WIZARD (APPLY) STYLES ----- */
+.wizard-stepper { display: flex; justify-content: space-between; margin-bottom: 40px; position: relative; }
+.wizard-stepper::before { content: ''; position: absolute; top: 50%; left: 0; right: 0; height: 2px; background: #eee; transform: translateY(-50%); z-index: 1;}
+.step { display: flex; flex-direction: column; align-items: center; z-index: 2; background: #f8f8ff; padding: 0 15px; }
+.step-icon { width: 40px; height: 40px; border-radius: 50%; background: #fff; border: 2px solid #ddd; color: #ddd; display: grid; place-items: center; font-weight: bold; }
+.step-label { margin-top: 10px; font-size: 14px; color: #aaa; }
+.step.active .step-icon, .step.completed .step-icon { border-color: #5F4B8B; color: #5F4B8B; }
+.step.completed .step-icon { background: #5F4B8B; color: #fff; }
+.step.active .step-label { color: #333; font-weight: 600; }
+.wizard-content { display: none; }
+.wizard-content.active { display: block; }
+
+/* ----- KNOWLEDGE BASE & SUPPORT STYLES ----- */
+.article-list a { display: block; padding: 15px; border-bottom: 1px solid #eee; text-decoration: none; color: #5F4B8B; font-weight: 500; transition: background-color 0.2s;}
+.article-list a:hover { background-color: #f8f8ff; }
+.chat-container { display: flex; flex-direction: column; gap: 15px;}
+.chat-message { max-width: 70%; padding: 15px; border-radius: 12px;}
+.chat-message.user { background-color: #5F4B8B; color: #fff; align-self: flex-end; }
+.chat-message.support { background-color: #eee; color: #333; align-self: flex-start; }

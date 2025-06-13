@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S2 Custom Portal</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+
+        <!-- ===== THE PERSISTENT SIDEBAR ===== -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo-initials">S2</div>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <!-- Use data-page attributes to tell JS which page to load -->
+                    <li><a href="#" data-page="dashboard"><i class="fas fa-th-large"></i><span>Dashboard</span></a></li>
+                    <li><a href="#" data-page="profile"><i class="fas fa-user-circle"></i><span>My Profile</span></a></li>
+                    <li><a href="#" data-page="submissions"><i class="fas fa-file-alt"></i><span>My Submissions</span></a></li>
+                    <li><a href="#" data-page="apply"><i class="fas fa-plus-circle"></i><span>Apply New Program</span></a></li>
+                    <li><a href="#" data-page="knowledge"><i class="fas fa-book-open"></i><span>Knowledge Center</span></a></li>
+                    <li><a href="#" data-page="support"><i class="fas fa-headset"></i><span>Support</span></a></li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                <div class="footer-graphic">
+                    <svg viewBox="0 0 100 50" xmlns="http://www.w3.org/2000/svg"><path d="M0 50 C 20 20, 40 20, 60 40 S 80 60, 100 30 L 100 50 Z" fill="#7864AF" opacity="0.5"></path></svg>
+                </div>
+                <a href="#" class="logout-link"><i class="fas fa-power-off"></i><span>Logout</span></a>
+            </div>
+        </aside>
+
+        <!-- ===== THE DYNAMIC CONTENT AREA ===== -->
+        <main id="main-content" class="main-content">
+            <!-- JavaScript will render the content here -->
+        </main>
+
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
