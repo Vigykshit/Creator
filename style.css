@@ -10,10 +10,12 @@ body {
 }
 
 .app-container { display: flex; height: 100vh; }
-
+.logo-initials img {
+    width: 240px;
+}
 /* ----- SIDEBAR STYLES ----- */
 .sidebar {
-    width: 240px;
+    width: 300px;
     background-color: #5951A2;
     color: white;
     display: flex;
